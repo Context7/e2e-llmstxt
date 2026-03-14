@@ -2,7 +2,7 @@
 
 This file is generated for E2E parsing.
 
-**Document ID:** p2s6m6jcqxh-mmpn30z1
+**Document ID:** vheb3s9anhd-mmpyi0cg
 
 This document contains a variety of concise, self-contained code examples across multiple programming languages, demonstrating common patterns, data structures, I/O, and control flow to exercise parsing in a realistic yet compact way.
 
@@ -10,36 +10,39 @@ Each example includes a short description followed by a fenced code block.
 
 Where helpful, examples may include brief variations in syntax or structure so the parser encounters a wider range of constructs across different ecosystems.
 
-## Swift: Map and Filter
+## Kotlin: Data Class Copy
 
-Demonstrates Swift's map and filter on arrays for concise transformation.
+Demonstrates Kotlin data classes and the copy method. Encourages immutable-style updates.
 
-```swift
-let nums = [1,2,3,4,5]
-let evensDoubled = nums.filter { $0 % 2 == 0 }.map { $0 * 2 }
-print(evensDoubled)
+```kotlin
+data class User(val id:Int, val name:String, val active:Boolean)
+fun main(){
+  val u1 = User(1, "Ada", true)
+  val u2 = u1.copy(active = false)
+  println(u2)
+}
 ```
 
 
-## Julia: Comprehension
+## R: Vector Arithmetic
 
-Julia list comprehension generating cubes of a range.
+Simple R vector example computing squares of a sequence.
 
-```julia
-nums = 1:5
-cubes = [n^3 for n in nums]
-println(cubes)
+```r
+nums <- 1:5
+squares <- nums^2
+print(squares)
 ```
 
 
-## TypeScript: Typed User Model
+## PHP: JSON Response
 
-This example shows a strongly-typed user interface and a function that formats user info. It highlights TypeScript's type safety.
+Outputs a JSON response in PHP for a simple API endpoint. Illustrates header setting and encoding.
 
-```typescript
-interface User { id: number; name: string; active: boolean }
-function formatUser(u: User): string { return `${u.id}:${u.name}:${u.active}` }
-console.log(formatUser({ id: 1, name: 'Ada', active: true }));
+```php
+<?php
+header('Content-Type: application/json');
+echo json_encode(['status' => 'ok', 'time' => time()]);
 ```
 
 
