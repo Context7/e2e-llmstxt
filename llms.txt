@@ -1,26 +1,6 @@
 [Guide](/docs/guide.md)
 [API Documentation](/docs/api.md)
 
-## Java: Stream Map/Filter
-
-Shows Java streams to map and filter a list, producing a concise pipeline. Demonstrates modern Java idioms.
-
-```java
-import java.util.*;
-import java.util.stream.*;
-class Main {
-  public static void main(String[] args) {
-    List<Integer> nums = Arrays.asList(1,2,3,4,5);
-    List<Integer> doubledEvens = nums.stream()
-      .filter(n -> n % 2 == 0)
-      .map(n -> n * 2)
-      .collect(Collectors.toList());
-    System.out.println(doubledEvens);
-  }
-}
-```
-
-
 ## Bash: Count Files
 
 Counts files in the current directory using common shell tools.
@@ -31,17 +11,26 @@ echo "Files: $FILES"
 ```
 
 
-## Python: Fibonacci Generator
+## Ruby: Word Count
 
-A simple, readable Python generator for producing Fibonacci numbers. It illustrates lazy iteration and clarity.
+Counts word frequencies in a sentence using Ruby’s expressive standard library. Simple and readable.
 
-```python
-def fib(n):
-    a, b = 0, 1
-    for _ in range(n):
-        yield a
-        a, b = b, a + b
+```ruby
+text = "to be or not to be"
+counts = Hash.new(0)
+text.split.each { |w| counts[w] += 1 }
+puts counts
+```
 
-print(list(fib(10)))
+
+## SQL: Group and Order
+
+SQL query that groups by name and orders by count descending.
+
+```sql
+SELECT name, COUNT(*) AS c
+FROM users
+GROUP BY name
+ORDER BY c DESC;
 ```
 
