@@ -1,43 +1,49 @@
 [Guide](/docs/guide.md)
 [API Documentation](/docs/api.md)
 
-## Haskell: Filter and Map
+## Java: Stream Map/Filter
 
-A minimal Haskell example filtering odd numbers and squaring them.
+Shows Java streams to map and filter a list, producing a concise pipeline. Demonstrates modern Java idioms.
 
-```haskell
-main :: IO ()
-main = print $ map (^2) $ filter odd [1..10]
+```java
+import java.util.*;
+import java.util.stream.*;
+class Main {
+  public static void main(String[] args) {
+    List<Integer> nums = Arrays.asList(1,2,3,4,5);
+    List<Integer> doubledEvens = nums.stream()
+      .filter(n -> n % 2 == 0)
+      .map(n -> n * 2)
+      .collect(Collectors.toList());
+    System.out.println(doubledEvens);
+  }
+}
 ```
 
 
-## SQL: Group and Order
+## JavaScript: Sum Array Elements
 
-SQL query that groups by name and orders by count descending.
+This snippet demonstrates summing the numbers in an array using JavaScript's reduce. It showcases a concise, functional approach.
 
-```sql
-SELECT name, COUNT(*) AS c
-FROM users
-GROUP BY name
-ORDER BY c DESC;
+```javascript
+const nums = [1, 2, 3, 4, 5];
+const total = nums.reduce((acc, n) => acc + n, 0);
+console.log(total);
 ```
 
 
-## Go: HTTP Server
+## C++: Transform Vector
 
-A minimal HTTP server in Go that responds with a greeting. It demonstrates net/http usage.
+C++ transforms a vector in-place and prints the results.
 
-```go
-package main
-import (
-    "fmt"
-    "net/http"
-)
-func main(){
-    http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request){
-        fmt.Fprintln(w, "Hello from Go!")
-    })
-    http.ListenAndServe(":8080", nil)
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+  vector<int> v{1,2,3,4,5};
+  transform(v.begin(), v.end(), v.begin(), [](int n){return n*2;});
+  for (auto n: v) cout<<n<<" ";
+  return 0;
 }
 ```
 
