@@ -1,42 +1,39 @@
 [Guide](/docs/guide.md)
 [API Documentation](/docs/api.md)
 
-## Dart: Map Over List
+## Ruby: Word Count
 
-Dart example mapping over a list and printing the result.
+Counts word frequencies in a sentence using Ruby’s expressive standard library. Simple and readable.
 
-```dart
-void main() {
-  final nums = [1,2,3,4,5];
-  final tripled = nums.map((n) => n * 3).toList();
-  print(tripled);
-}
+```ruby
+text = "to be or not to be"
+counts = Hash.new(0)
+text.split.each { |w| counts[w] += 1 }
+puts counts
 ```
 
 
-## C++: Transform Vector
+## TypeScript: Typed User Model
 
-C++ transforms a vector in-place and prints the results.
+This example shows a strongly-typed user interface and a function that formats user info. It highlights TypeScript's type safety.
 
-```cpp
-#include <bits/stdc++.h>
-using namespace std;
-int main(){
-  vector<int> v{1,2,3,4,5};
-  transform(v.begin(), v.end(), v.begin(), [](int n){return n*2;});
-  for (auto n: v) cout<<n<<" ";
-  return 0;
-}
+```typescript
+interface User { id: number; name: string; active: boolean }
+function formatUser(u: User): string { return `${u.id}:${u.name}:${u.active}` }
+console.log(formatUser({ id: 1, name: 'Ada', active: true }));
 ```
 
 
-## Swift: Map and Filter
+## Kotlin: Data Class Copy
 
-Demonstrates Swift's map and filter on arrays for concise transformation.
+Demonstrates Kotlin data classes and the copy method. Encourages immutable-style updates.
 
-```swift
-let nums = [1,2,3,4,5]
-let evensDoubled = nums.filter { $0 % 2 == 0 }.map { $0 * 2 }
-print(evensDoubled)
+```kotlin
+data class User(val id:Int, val name:String, val active:Boolean)
+fun main(){
+  val u1 = User(1, "Ada", true)
+  val u2 = u1.copy(active = false)
+  println(u2)
+}
 ```
 
