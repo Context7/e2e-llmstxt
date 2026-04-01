@@ -2,39 +2,13 @@
 
 This file is generated for E2E parsing.
 
-**Document ID:** q0eydpgiy7-mneq12tf
+**Document ID:** 4gok164ao2x-mnfthkvs
 
 This document contains a variety of concise, self-contained code examples across multiple programming languages, demonstrating common patterns, data structures, I/O, and control flow to exercise parsing in a realistic yet compact way.
 
 Each example includes a short description followed by a fenced code block.
 
 Where helpful, examples may include brief variations in syntax or structure so the parser encounters a wider range of constructs across different ecosystems.
-
-## Julia: Comprehension
-
-Julia list comprehension generating cubes of a range.
-
-```julia
-nums = 1:5
-cubes = [n^3 for n in nums]
-println(cubes)
-```
-
-
-## Scala: List Pipeline
-
-Uses Scala collections to filter and map a list with a clear pipeline.
-
-```scala
-object Main {
-  def main(args: Array[String]): Unit = {
-    val nums = List(1,2,3,4,5)
-    val oddsSquared = nums.filter(_ % 2 == 1).map(n => n*n)
-    println(oddsSquared)
-  }
-}
-```
-
 
 ## TypeScript: Typed User Model
 
@@ -44,6 +18,29 @@ This example shows a strongly-typed user interface and a function that formats u
 interface User { id: number; name: string; active: boolean }
 function formatUser(u: User): string { return `${u.id}:${u.name}:${u.active}` }
 console.log(formatUser({ id: 1, name: 'Ada', active: true }));
+```
+
+
+## PHP: JSON Response
+
+Outputs a JSON response in PHP for a simple API endpoint. Illustrates header setting and encoding.
+
+```php
+<?php
+header('Content-Type: application/json');
+echo json_encode(['status' => 'ok', 'time' => time()]);
+```
+
+
+## Ruby: Word Count
+
+Counts word frequencies in a sentence using Ruby’s expressive standard library. Simple and readable.
+
+```ruby
+text = "to be or not to be"
+counts = Hash.new(0)
+text.split.each { |w| counts[w] += 1 }
+puts counts
 ```
 
 
