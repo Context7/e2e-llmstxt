@@ -1,43 +1,38 @@
 [Guide](/docs/guide.md)
 [API Documentation](/docs/api.md)
 
-## Julia: Comprehension
+## Swift: Map and Filter
 
-Julia list comprehension generating cubes of a range.
+Demonstrates Swift's map and filter on arrays for concise transformation.
 
-```julia
-nums = 1:5
-cubes = [n^3 for n in nums]
-println(cubes)
+```swift
+let nums = [1,2,3,4,5]
+let evensDoubled = nums.filter { $0 % 2 == 0 }.map { $0 * 2 }
+print(evensDoubled)
 ```
 
 
-## Scala: List Pipeline
+## Kotlin: Data Class Copy
 
-Uses Scala collections to filter and map a list with a clear pipeline.
+Demonstrates Kotlin data classes and the copy method. Encourages immutable-style updates.
 
-```scala
-object Main {
-  def main(args: Array[String]): Unit = {
-    val nums = List(1,2,3,4,5)
-    val oddsSquared = nums.filter(_ % 2 == 1).map(n => n*n)
-    println(oddsSquared)
-  }
+```kotlin
+data class User(val id:Int, val name:String, val active:Boolean)
+fun main(){
+  val u1 = User(1, "Ada", true)
+  val u2 = u1.copy(active = false)
+  println(u2)
 }
 ```
 
 
-## Rust: Read Lines
+## JavaScript: Sum Array Elements
 
-Reads lines from stdin and echoes them in Rust. Highlights ownership-light IO usage.
+This snippet demonstrates summing the numbers in an array using JavaScript's reduce. It showcases a concise, functional approach.
 
-```rust
-use std::io::{self, BufRead};
-fn main(){
-    let stdin = io::stdin();
-    for line in stdin.lock().lines() {
-        println!("{}", line.unwrap());
-    }
-}
+```javascript
+const nums = [1, 2, 3, 4, 5];
+const total = nums.reduce((acc, n) => acc + n, 0);
+console.log(total);
 ```
 
